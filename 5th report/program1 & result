@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+double x, eps, delta, y, yd, c, x1;
+int n;
+int n_max;
+char dummy = '\n';
+
+int main(void){
+
+printf("f(x) = x^2 - 2x の解を求める\n");
+
+printf(" 初期値 x = , 任意の小さい数字 eps = , 最大試行回数 n_max = \n");
+scanf("%lf, %lf, %d", &x, &eps, &n_max);
+
+
+
+do {
+n = 0;    
+n++;
+
+y = x * x - 2 * x;
+yd = 2 * x - 2;
+
+delta = -y / yd;
+c = abs(delta);
+x = x + delta;
+y = x * x - 2 * x;
+
+printf("(x , y) = (%lf , %lf)\n", x, y);
+
+
+}while (c > eps && n <= n_max);
+
+printf("解 x = %lf\n", x);
+
+return 0;
+}
+
+
+
+結果（Excelでまとめた表にて）

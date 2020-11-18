@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <math.h>
+
+
+
+#define A 0.0    
+#define B 3.0    
+    
+
+
+double f(double x) {
+    return x * x * x * x - 2 * x * x * x + x * x - 3 * x + 1;
+}
+
+
+int main(void) {
+    
+    int N;
+
+    printf("Nを入力せよ\n");
+    scanf("%d", &N);
+    
+    double delta = (B - A) / N;    
+    double value = 0.0;    
+    int i;
+    
+
+   
+    
+    for(i=0; i<N; i++) {
+        
+        
+        double x = A + i * delta;
+        
+        
+        printf("%f\t%f\n", x, value);
+        
+        
+        value += ( f(x) + f(x+delta) ) * delta / 2.0;
+    }
+    
+    
+    printf("%f\t%f\n", B, value);
+    
+    return 0;
+}

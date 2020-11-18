@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+    int i, k;
+    int M = 0;
+    char str[10000000];
+    char ss[5];
+    FILE *infp,*outfp;
+
+    infp = fopen("eng-1.txt","r");  
+
+    outfp = fopen("textout.txt","w");
+
+    while(getchar() != EOF)
+        M++;                                        //文字数カウント
+
+        
+    
+
+        for(i = 0; i <100 ; i++){
+            k = 0 + rand() % M;                     //M以下の任意の値kランダム入手
+            fseek(infp, k, SEEK_SET);               //ファイルのk番目値読み込み
+            fscanf(infp, "%4c", str);
+            str[i] = '\0';
+            putc(str[i],outfp);                     //読み込んだ文字を指定のファイルに書きだし
+
+
+        }
+
+    fclose(infp);                                   //ファイル閉じ
+    fclose(outfp);                                  //同上
+
+    exit(0);
+
+    return 0;
+
+
+    
+}

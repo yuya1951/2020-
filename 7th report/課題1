@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+
+char lower(char);
+
+char lower(char a){
+    if('A' <= a && a <= 'Z'){
+        a = a + ('a' - 'A');
+    }
+    return a;
+}
+
+int main(void){
+  int i;
+  char str[100000];
+  char c = 'a' - 'A';
+  FILE *infp,*outfp;
+  char ch;
+  ch = str[i];
+
+
+  infp = fopen("test1.txt","r");  
+
+  outfp = fopen("textout1.txt","w");
+
+  
+  
+  while((str[i] = getc(infp)) != EOF)
+  
+  for(i = 0; i < 10000; i++){
+    if( isalpha(str[i]) == 0 )
+      
+      str[i] = c;
+      putc(str[i],outfp);
+  }
+
+  
+
+  fclose(infp);                                   
+  fclose(outfp);  
+
+  exit(0); 
+
+  return 0;
+}

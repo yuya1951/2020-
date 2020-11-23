@@ -27,6 +27,11 @@ int main(void){
                 putc(a,outfp);
 
         }    
+        else
+        {
+                putc(c,outfp);
+        }
+        
 
 
         fclose(infp);

@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+	FILE *fp;
+	int i, c, k, count[10000];
+
+	for(i = 0; i < 56; i++) 
+	    fp = fopen("textout1.txt", "r");
+	    k = count[i]++;
+        count[i] = 0;
+
+	while((c = fgetc(fp)) != EOF){
+		if('A' <= c && c <= 'Z')
+             count[c - 'A']++;
+
+		if('a' <= c && c <= 'z')
+             count[c - 'a']++;
+	}
+
+	for(i = 0; i < 26; i++)
+        printf("%c +  %c: %d\n", i + 65, i + 97, count[i]);
+
+	return 0;
+}

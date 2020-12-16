@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+ 
+int main(void){
+ 
+  int i;
+  int count = 0;
+  int max = 100000;
+  double x,y,z,p;
+ 
+  
+  srand(1);
+ 
+  
+  for(i=0;i<max;i++){
+    x = (double)rand()/RAND_MAX;
+    y = (double)rand()/RAND_MAX;
+    z = x*x + y*y;
+
+    if(z<1)
+      count++;
+
+  }
+ 
+  
+  p = (double)count / max * 4;
+  printf("%f\n", p);
+ 
+  return 0;
+}
